@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Archive{% endblock %}
+
+{% block content %}
+  <h1>Archive</h1>
+  <form method="get">
+    <p>
+      {{ form.category.label }}<br>
+      {{ form.category() }}
+    </p>
+    <p>
+      {{ form.status.label }}<br>
+      {{ form.status() }}
+    </p>
+    <p>{{ form.submit() }}</p>
+  </form>
+  {% for request in archived_requests %}
+    <div>
+      <h2><a href="{{ url_for('request', request_id=request.id) }}">{{ request.title }}</a></h2>
+      <p>{{ request.comment }}</p>
+    </div>
+  {% endfor %}
+{% endblock %}

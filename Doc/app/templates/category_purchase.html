@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Purchase Request{% endblock %}
+
+{% block content %}
+  <h1>Purchase Request</h1>
+  <form method="post">
+    {{ form.hidden_tag() }}
+    <p>
+      {{ form.title.label }}<br>
+      {{ form.title() }}
+    </p>
+    <p>
+      {{ form.comment.label }}<br>
+      {{ form.comment() }}
+    </p>
+    <p>
+      {{ form.price.label }}<br>
+      {{ form.price() }}
+    </p>
+    <p>{{ form.submit() }}</p>
+  </form>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Goals Request{% endblock %}
+
+{% block content %}
+  <h1>Goals Request</h1>
+  <form method="post">
+    {{ form.hidden_tag() }}
+    <p>
+      {{ form.title.label }}<br>
+      {{ form.title() }}
+    </p>
+    <p>
+      {{ form.comment.label }}<br>
+      {{ form.comment() }}
+    </p>
+    <p>
+      {{ form.start_date.label }}<br>
+      {{ form.start_date() }}
+    </p>
+    <p>
+      {{ form.end_date.label }}<br>
+      {{ form.end_date() }}
+    </p>
+    <p>{{ form.submit() }}</p>
+  </form>
+{% endblock %}

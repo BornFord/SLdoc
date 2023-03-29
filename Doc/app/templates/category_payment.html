@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Payment Request{% endblock %}
+
+{% block content %}
+  <h1>Payment Request</h1>
+  <form method="post">
+    {{ form.hidden_tag() }}
+    <p>
+      {{ form.title.label }}<br>
+      {{ form.title() }}
+    </p>
+    <p>
+      {{ form.comment.label }}<br>
+      {{ form.comment() }}
+    </p>
+    <p>
+      {{ form.file.label }}<br>
+      {{ form.file() }}
+    </p>
+    {% endblock %}

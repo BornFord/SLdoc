@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+  <h1>Active Requests</h1>
+  {% for request in active_requests %}
+    <div>
+      <h2><a href="{{ url_for('request', request_id=request.id) }}">{{ request.title }}</a></h2>
+      <p>{{ request.comment }}</p>
+    </div>
+  {% endfor %}
+  <div class="actions">
+    <a href="{{ url_for('category') }}" class="btn btn-primary">Create Request</a>
+    <a href="{{ url_for('archive') }}" class="btn btn-secondary">View Archive</a>
+    <a href="{{ url_for('logout') }}" class="btn btn-secondary">Logout</a>
+  </div>
+{% endblock %}
